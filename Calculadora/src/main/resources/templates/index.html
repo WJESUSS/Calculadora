@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Web</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>🧮 Calculadora Web</h1>
+
+    <form th:action="@{/calcular}" th:object="${operacao}" method="post">
+        <div class="input-group">
+            <input type="number" step="any" th:field="*{numero1}" placeholder="Digite o primeiro número" required/>
+        </div>
+
+        <div class="input-group">
+            <select th:field="*{operacao}">
+                <option value="soma">Soma (+)</option>
+                <option value="subtracao">Subtração (−)</option>
+                <option value="multiplicacao">Multiplicação (×)</option>
+                <option value="divisao">Divisão (÷)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <input type="number" step="any" th:field="*{numero2}" placeholder="Digite o segundo número" required/>
+        </div>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div class="resultado" th:if="${operacao.resultado != null}">
+        <p>✅ Resultado: <strong th:text="${operacao.resultado}"></strong></p>
+    </div>
+
+    <div class="erro" th:if="${erro}">
+        <p th:text="${erro}"></p>
+    </div>
+</div>
+</body>
+</html>
