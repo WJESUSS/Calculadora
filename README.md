@@ -2,7 +2,7 @@
 
 Uma calculadora web simples desenvolvida com **Java 21**, **Spring Boot** e **Thymeleaf**, que realiza as quatro operações matemáticas básicas: **soma, subtração, multiplicação e divisão**.
 
-![Screenshot da calculadora](https://via.placeholder.com/800x400.png?text=Calculadora+Web+Spring+Boot)
+![Screenshot da calculadora][(http://localhost:8080/calcular))
 
 ---
 
